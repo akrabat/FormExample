@@ -10,11 +10,11 @@
 namespace RecoverPassword\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
-use RecoverPassword\Form\RetrievePassword as RetrievePasswordForm;
-use RecoverPassword\Form\Bug as BugForm;
-use RecoverPassword\Form\RetrievePasswordFilter;
-use RecoverPassword\Service\PasswordRetrieval as PasswordRetrievalService;
-use RecoverPassword\Entity\Bug;
+use Application\Form\RetrievePassword as RetrievePasswordForm;
+use Application\Form\Bug as BugForm;
+use Application\Form\RetrievePasswordFilter;
+use Application\Service\PasswordRetrieval as PasswordRetrievalService;
+use Application\Entity\Bug;
 
 class IndexController extends AbstractActionController
 {
