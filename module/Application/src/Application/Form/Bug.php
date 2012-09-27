@@ -31,7 +31,7 @@ class Bug extends Form
             'type' => 'Zend\Form\Element\Submit',            
             'attributes' => array(
                 'value' => 'Add',
-                'class' => 'submit',
+                'class' => 'btn-success',
             ),
         ));
     }
