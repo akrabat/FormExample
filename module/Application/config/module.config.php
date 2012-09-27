@@ -110,7 +110,7 @@ return array(
     ),
     'view_helpers' => array(
         'invokables' => array(
-            'renderForm' => 'Application\View\Helper\RenderForm',
+            'renderForm' => 'Application\View\Helper\renderForm',
         ),
     ),    
 );
