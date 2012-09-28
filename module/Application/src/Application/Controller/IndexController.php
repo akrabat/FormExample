@@ -10,18 +10,17 @@
 namespace Application\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
-use Zend\View\Model\ViewModel;
 use Application\Form\RetrievePassword as RetrievePasswordForm;
 use Application\Form\Bug as BugForm;
 use Application\Form\RetrievePasswordFilter;
 use Application\Service\PasswordRetrieval as PasswordRetrievalService;
 use Application\Entity\Bug;
-use Zend\Debug\Debug;
 
 class IndexController extends AbstractActionController
 {
     public function indexAction()
     {
+        
     }
 
     public function retrievePasswordAction()
@@ -37,13 +36,15 @@ class IndexController extends AbstractActionController
         if ($request->isPost()) {
             $form->setData($request->getPost());
             if ($form->isValid()) {
-                // Valid
                 $passwordRetrieval->sendLostPasswordEmail();
+                echo '<pre>';
+                var_dump($passwordRetrieval);
+                echo '</pre>';
                 die("success");
             }
         }
 
-        return array('form' => $form);        
+        return array('form' => $form);
     }
 
     public function bugAction()
@@ -53,18 +54,18 @@ class IndexController extends AbstractActionController
         $bug = new Bug();
         $form->bind($bug);
 
-        if ($this->request->isPost()) {
-            LDBG($this->request->getPost());
-            $form->setData($this->request->getPost());
-
+        $request = $this->getRequest();
+        if ($request->isPost()) {
+            $form->setData($request->getPost());
             if ($form->isValid()) {
+                echo '<pre>';
                 var_dump($bug);
+                echo '</pre>';
+                die("success");
             }
-            LDBG($form->getMessages());exit;
         }
 
-
-        return array('form' => $form);        
+        return array('form' => $form);
     }
 
 }

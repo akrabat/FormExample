@@ -41,7 +41,7 @@ class BugFieldset extends Fieldset implements InputFilterProviderInterface
     public function getInputFilterSpecification()
     {
         return array(
-            'name' => array(
+            'title' => array(
                 'required' => true,
             ),
             'description' => array(
